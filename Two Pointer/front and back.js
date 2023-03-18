@@ -18,16 +18,13 @@ console.log(reverseString(["a", "b", "c", "d", "e"]));
 // ex-2
 var isPalindrome = function (s) {
   const newStr = s.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
-  let frontResult = "";
-  let backResult = "";
 
   for (let i = 0, j = newStr.length - 1; i < j; ) {
-    frontResult = frontResult + newStr[i];
-    backResult = backResult + newStr[j];
+    if (newStr[i] !== newStr[j]) return false;
     i++;
     j--;
   }
 
-  return frontResult === backResult;
+  return true;
 };
 console.log(isPalindrome("A man, a plan, a canal: Panama"));
